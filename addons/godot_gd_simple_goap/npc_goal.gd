@@ -1,4 +1,4 @@
-class_name  NPCGoal;
+class_name  NpcGoal;
 extends        Node;
 
 @export_group("Data")
@@ -7,7 +7,7 @@ extends        Node;
 @export var desired_state_collection : Dictionary      ;
 
 @export_group("References")
-@export var    npc_state : NPCState;
+@export var    npc_state : NpcState;
 
 func is_desired_state_collection_met() -> bool:
 	if (       npc_state == null     )        :

@@ -1,18 +1,18 @@
-class_name NPCPlanner;
+class_name NpcPlanner;
 extends          Node;
 
 @export_group("References")
-@export var npc_goals   : Array[NPCGoal  ];
-@export var npc_actions : Array[NPCAction];
+@export var npc_goals   : Array[NpcGoal  ];
+@export var npc_actions : Array[NpcAction];
 
-func   plan()                                          ->       NPCAction:
-	var                     valid_npc_action_collection : Array[NPCAction];
+func   plan()                                          ->       NpcAction:
+	var                     valid_npc_action_collection : Array[NpcAction];
 	for     npc_action in         npc_actions           :
 		if (npc_action.is_precondition_state_collection_met()) :
 							valid_npc_action_collection.append(
 			npc_action                                        );
 			
-	var     chosen_npc_goal : NPCGoal = null ;
+	var     chosen_npc_goal : NpcGoal = null ;
 	for            npc_goal in     npc_goals :
 		if (       npc_goal.is_desired_state_collection_met()):
 			continue;

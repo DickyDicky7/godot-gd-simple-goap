@@ -1,9 +1,9 @@
-class_name NPC ;
+class_name Npc ;
 extends    Node;
 
 @export_group           ("References")
-@export var npc_state   : NPCState  ;
-@export var npc_planner : NPCPlanner;
+@export var npc_state   : NpcState  ;
+@export var npc_planner : NpcPlanner;
 
 var     current_npc_action          ;
 func _process(delta: float) -> void :

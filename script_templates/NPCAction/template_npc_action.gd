@@ -1,4 +1,4 @@
-extends NPCAction;
+extends NpcAction;
 
 func     _perform() -> void :
 	self._perform()         ;

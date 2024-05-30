@@ -1,4 +1,4 @@
-class_name NPCState;
+class_name NpcState;
 extends        Node;
 
 @export_group("Data")

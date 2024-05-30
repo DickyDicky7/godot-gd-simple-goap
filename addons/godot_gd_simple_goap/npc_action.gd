@@ -1,4 +1,4 @@
-class_name NPCAction;
+class_name NpcAction;
 extends         Node;
 
 @export_group ("Data")
@@ -12,7 +12,7 @@ extends         Node;
 @export var       cost: float = 0.0;
 
 @export_group("References")
-@export var    npc_state : NPCState;
+@export var    npc_state : NpcState;
 
 func              is_precondition_state_collection_met () -> bool:
 	return npc_state. is_required_state_collection_met (
