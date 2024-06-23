@@ -1,9 +1,4 @@
 extends NpcGoal;
 
-func            _get_dynamic_priority() -> float :
-	return self._get_dynamic_priority()          ;
-
-
-
-
-
+func             _get_dynamic_priority() -> float :
+	return super._get_dynamic_priority()          ;

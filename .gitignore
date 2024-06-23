@@ -1,0 +1,9 @@
+*.*
+!addons/**/*.*
+!script_templates/**/*.*
+!**/README.md
+!**/.gitattributes
+addons/godot_gd_simple_goap/Node.svg.import
+!**/.gitignore
+addons/AS2P/
+
