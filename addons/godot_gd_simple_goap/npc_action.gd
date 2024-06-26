@@ -86,7 +86,7 @@ func            apply_post_action_expresion_collection    (                     
 		### EXPERIMENT ###
 		var m1 : PackedStringArray =  custom_expression.assigned_state.split(".") ;
 		var m2 : Object            =          npc_state.   state_collection[m1[0]];
-		var rv                     =   (
+		var rv : Variant           =   (
 			expression.execute    (
 			expression_values,self)    );
 		if (m1.size() <= 1):                  npc_state.   state_collection[
