@@ -81,11 +81,20 @@ func            apply_post_action_expresion_collection    (                     
  custom_expression.expression
 ,custom_expression.parameters);
 		var expression_values : Array = [];
-		for parameter : StringName in custom_expression.parameters   :
+		for parameter : StringName in custom_expression.parameters    :
 			expression_values.push_back(      npc_state.   state_collection[parameter]);
-		npc_state.state_collection[   custom_expression.assigned_state     ]    =     (
+		### EXPERIMENT ###
+		var m1 : PackedStringArray =  custom_expression.assigned_state.split(".") ;
+		var m2 : Object            =          npc_state.   state_collection[m1[0]];
+		var rv                     =   (
 			expression.execute    (
-			expression_values,self)                                                   );
+			expression_values,self)    );
+		if (m1.size() <= 1):                  npc_state.   state_collection[
+                                      custom_expression.assigned_state     ] = rv ;
+		else:
+			create_tween(
+			     ).tween_property(m2, ":".join(m1.slice(1)), rv, 0);
+		### EXPERIMENT ###
 	pass;
 
 func          unapply_post_action_expresion_collection    (                           ) -> void:
@@ -134,6 +143,7 @@ func marking_performed_timestamp() -> void:
 		prev_performed_timestamp = Time.get_ticks_msec() / 1000.0                                       ;
 		pass                                                                                            ;
 
+#
 #
 #
 #
